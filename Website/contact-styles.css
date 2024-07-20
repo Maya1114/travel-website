@@ -1,0 +1,89 @@
+body.dark-mode {
+  background-color: #3f3d3d;
+  color: #ffffff;
+}
+
+body.dark-mode h1 {
+	color: #ffffff; 
+}
+
+body.dark-mode h2 {
+	color: #ffffff; 
+}
+
+.navbar {
+  background-color: rgba(248, 201, 165, 0.8); /* Semi-transparent light gray for the navbar */
+}
+
+.navbar .nav-link {
+  color: black;
+}
+
+body.dark-mode .navbar {
+  background-color: rgba(199, 161, 180, 0.8); /* Semi-transparent darker background for the navbar in dark mode */
+}
+
+body.dark-mode .navbar .nav-link {
+  color: white; /* White text color for navbar links in dark mode */
+}
+
+body.dark-mode .navbar .navbar-brand {
+  color: white; /* White text color for the navbar brand in dark mode */
+}
+
+.custom-button {
+  background-color: #c7a1b4; /* Set the background color */
+  color: white; /* Set the text color */
+  border: none; /* Remove the default border */
+  padding: 5px 10px; /* Adjust padding */
+  border-radius: 10px;
+}
+
+.custom-button:hover {
+  background-color: #f6bc9e; /* Darker shade for hover effect */
+}
+
+ .container {
+		margin-top: 40px;
+	}
+	h2 {
+		color: #333;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	.contact-form {
+		background: #fff;
+		padding: 20px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		border-radius: 8px;
+	}
+	.contact-info {
+		background: #fff;
+		padding: 20px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		border-radius: 8px;
+		margin-top: 20px;
+	}
+	.contact-info h3 {
+		margin-top: 0;
+	}
+	.contact-info p {
+		margin: 5px 0;
+	}
+	
+	.btn-peach {
+		background-color: #ffcc99;
+		color: #fff;
+		border: none;
+	}
+	.btn-peach:hover {
+		background-color: #ffb380;
+	}
+	
+	body.dark-mode .contact-info{
+		background-color: #5a5a5a;
+	}
+	
+	body.dark-mode .contact-form{
+		background-color: #5a5a5a;
+	}

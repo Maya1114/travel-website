@@ -1,0 +1,83 @@
+body.dark-mode {
+  background-color: #3f3d3d;
+  color: #ffffff;
+}
+
+.navbar {
+  background-color: rgba(248, 201, 165, 0.8); /* Semi-transparent light gray for the navbar */
+}
+
+.navbar .nav-link {
+  color: black;
+}
+
+body.dark-mode .navbar {
+  background-color: rgba(199, 161, 180, 0.8); /* Semi-transparent darker background for the navbar in dark mode */
+}
+
+body.dark-mode .navbar .nav-link {
+  color: white; /* White text color for navbar links in dark mode */
+}
+
+body.dark-mode .navbar .navbar-brand {
+  color: white; /* White text color for the navbar brand in dark mode */
+}
+
+.custom-button {
+  background-color: #c7a1b4; /* Set the background color */
+  color: white; /* Set the text color */
+  border: none; /* Remove the default border */
+  padding: 5px 10px; /* Adjust padding */
+  border-radius: 10px;
+}
+
+.custom-button:hover {
+  background-color: #f6bc9e; /* Darker shade for hover effect */
+}
+
+body {
+		font-family: Arial, sans-serif;
+		background-color: #f4f4f4;
+		margin: 0;
+		padding: 0;
+	}
+	.carousel {
+		background: #fff;
+		border-radius: 8px;
+		overflow: hidden;
+		margin: 50px auto;
+		width: 80%;
+		max-width: 1200px;
+	}
+	.carousel-cell {
+		width: 320px;
+		height: 400px;
+		margin-right: 10px;
+		position: relative;
+	}
+	.carousel-cell img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.box {
+		position: absolute;
+		bottom: 10px;
+		left: 10px;
+		background: rgba(0, 0, 0, 0.5);
+		color: #fff;
+		padding: 10px;
+		border-radius: 5px;
+	}
+	.looking-button {
+		color: #fff;
+		text-decoration: none;
+		font-weight: bold;
+	}
+	.flickity-prev-next-button {
+		background: rgba(0, 0, 0, 0.5);
+		color: #fff;
+	}
+	.flickity-button-icon {
+		fill: #fff;
+	}

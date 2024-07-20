@@ -1,0 +1,99 @@
+body.dark-mode {
+	background-color: #3f3d3d;
+	color: #ffffff;
+}
+
+.navbar {
+	background-color: #f8c9a5; /* Light orange background for navbar */
+}
+
+.navbar .nav-link {
+	color: black;
+}
+
+.custom-button {
+	background-color: #c7a1b4; /* Background color for buttons */
+	color: white; /* Text color for buttons */
+	border: none;
+	padding: 5px 10px;
+	border-radius: 10px;
+}
+
+.custom-button:hover {
+	background-color: #f6bc9e; /* Darker shade for hover effect */
+}
+
+#map {
+	height: 500px;
+	width: 100%;
+}
+
+.popup-content img {
+	width: 100%;
+	height: auto;
+}
+
+.map-container {
+	width: 80%; /* Adjust the width as needed */
+	max-width: 1200px; /* Optional: Set a maximum width */
+	height: 600px; /* Adjust the height as needed */
+	margin: 0 auto; /* Center the map container */
+}
+
+.table-container {
+	width: 80%; /* Adjust the width as needed */
+	max-width: 800px; /* Optional: Set a maximum width */
+	margin: 0 auto; /* Center the table container */
+	margin-top: 20px;
+	margin-bottom: 20px;
+	
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	background-color: #f5e1e1; /* Light brown color */
+	border-radius: 8px;
+	overflow: hidden;
+	/* padding-bottom: 20px; */
+}
+
+th, td {
+	padding: 12px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+}
+
+th {
+	background-color: #e3bfa2; /* Slightly darker brown */
+	color: #fff;
+}
+
+tr:hover {
+	background-color: #f1d8d8; /* Light brown hover effect */
+}
+
+.details {
+	display: none;
+	background-color: #fff; /* White background for details */
+	padding: 10px;
+	border-top: 1px solid #ddd;
+}
+
+.details img {
+	width: 100px;
+	height: auto;
+	border-radius: 5px;
+	margin-right: 10px;
+}
+
+.details p {
+	margin: 0;
+}
+
+.expand-btn {
+	cursor: pointer;
+	color: black;
+	text-decoration: none;
+}
+		

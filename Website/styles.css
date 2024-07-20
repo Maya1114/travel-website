@@ -1,0 +1,195 @@
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f4f4f4;
+	color: #333;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  flex: 1;
+}
+
+/* for about page*/
+.container {
+  display: flex;
+  flex: 1;
+  width: 538px;
+}
+about-section,
+aside {
+  align-items: stretch;
+  margin: 1.858736059%; /*  10px ÷ 538px = .018587361 */
+}
+about-section {
+  float: left;
+  /*width: 63.197026%;    /* 340px ÷ 538px = .63197026 */ 
+  flex: 0 0 63.197026%;
+  align-items: center; /* Center vertically */
+}
+}
+aside {
+  float: right;
+  /*width: 29.3680297%;  /* 158px ÷ 538px = .293680297 */  
+  flex: 0 0 29.3680297%;  
+}
+
+/* end of about */
+
+main {
+    flex-grow: 1;
+}
+
+header {
+	background-color: #4CAF50;
+	color: white;
+	padding: 1em 0;
+	text-align: center;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 1000;
+}
+
+header h1 {
+	margin: 0;
+}
+/* my custom class for the navbar -> not bootstrap */
+.custom-navbar {
+  position: top;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+
+nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+nav ul li {
+	display: inline;
+	margin: 0 10px;
+}
+
+nav ul li a {
+	color: white;
+	text-decoration: none;
+}
+
+main {
+	padding: 80px 20px 20px; /* Adjusted padding to account for fixed header */
+}
+
+footer {
+	background-color: #4CAF50;
+	color: white;
+	text-align: center;
+	padding: 10px 0;
+	margin-top: auto;
+}
+
+section {
+	margin: 20px 0;
+}
+
+.hero {
+	position: relative;
+	text-align: center;
+	color: white;
+}
+
+.hero img {
+	width: 100%;
+	height: auto;
+}
+
+.hero-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(0, 0, 0, 0.5); /* Optional: for better text visibility */
+	padding: 20px;
+	border-radius: 10px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+}
+
+.about-image img {
+    border: 2px solid #4CAF50; /* Green border, adjust color and width as needed */
+    border-radius: 10px; /* Optional: rounded corners */
+    display: block; /* Ensures the border wraps around the image */
+}
+
+.about-text {
+    flex: 2;
+    padding-left: 20px; /* Adjust spacing between image and text */
+}
+
+.about-heading {
+    text-align: left;
+}
+
+.about-paragraphs {
+    text-align: left;
+	max-width: 100%; /* Ensure paragraphs wrap sooner */
+    margin-bottom: 10px; /* Adjust spacing between paragraphs */
+}
+
+.gallery h2, .gallery p {
+	padding-left: 20px;
+}
+
+.gallery img {
+	height: auto;
+	width: 200px;
+	margin: 5px;
+	padding-left: 20px;
+}
+
+.gallery img:hover {
+    transform: scale(1.1); /* Enlarge the image on hover */
+}
+
+
+ .contact-form {
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input, .contact-form textarea {
+	width: 100%;
+	padding: 10px;
+	margin: 10px 0;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.contact-form button {
+	background-color: #4CAF50;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.contact-form button:hover {
+	background-color: #45a049;
+}

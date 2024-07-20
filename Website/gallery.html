@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel With Me</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.min.css">
+  <link rel="stylesheet" href="gallery-styles.css">
+<!--
+  <style>
+    body.dark-mode {
+      background-color: #3f3d3d;
+      color: #ffffff;
+    }
+	
+	body.dark-mode h1 {
+		color: #ffffff; 
+	}
+
+    .navbar {
+      background-color: rgba(248, 201, 165, 0.8); /* Semi-transparent light gray for the navbar */
+    }
+	
+    .navbar .nav-link {
+      color: black;
+    }
+
+    body.dark-mode .navbar {
+      background-color: rgba(199, 161, 180, 0.8); /* Semi-transparent darker background for the navbar in dark mode */
+    }
+	
+    body.dark-mode .navbar .nav-link {
+      color: white; /* White text color for navbar links in dark mode */
+    }
+
+    body.dark-mode .navbar .navbar-brand {
+      color: white; /* White text color for the navbar brand in dark mode */
+    }
+
+    .custom-button {
+      background-color: #c7a1b4; /* Set the background color */
+      color: white; /* Set the text color */
+      border: none; /* Remove the default border */
+      padding: 5px 10px; /* Adjust padding */
+      border-radius: 10px;
+    }
+
+    .custom-button:hover {
+      background-color: #f6bc9e; /* Darker shade for hover effect */
+    }
+	
+	h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        .gallery-item .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item:hover .caption {
+            opacity: 1;
+        }
+
+  </style>
+  -->
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="#">TWM</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="destinations.html">Destinations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="blog.html">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="gallery.html">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <button id="theme-toggle" class="custom-button">
+            <img id="theme-icon" src="https://img.icons8.com/ios-filled/50/000000/moon-symbol.png" alt="Toggle Theme" width="20" height="20">
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  
+<h1>Gallery</h1>
+
+<div class="gallery">
+    <div class="gallery-item">
+        <img src="taipei101.jpeg" alt="Taipei 101">
+        <div class="caption">Taipei 101</div>
+    </div>
+    <div class="gallery-item">
+        <img src="vert-bungee.jpg" alt="Bungee Jumping">
+        <div class="caption">The Highest Bungee Jump in the World</div>
+    </div>
+    <div class="gallery-item">
+        <img src="flower-field.jpeg" alt="Flower Field">
+        <div class="caption">Solo Traveling in Seattle</div>
+    </div>
+    <div class="gallery-item">
+        <img src="mountain.jpeg" alt="Atop a Mountain">
+        <div class="caption">Hiking Washington Mountains</div>
+    </div>
+    <div class="gallery-item">
+        <img src="stars.jpeg" alt="Stargazing">
+        <div class="caption">Stargazing in Sutherland</div>
+    </div>
+    <div class="gallery-item">
+        <img src="elephant.jpeg" alt="elephants">
+        <div class="caption">Safari Elephants</div>
+    </div>
+    <!-- Add more gallery items as needed -->
+</div>
+  
+    <script type="text/javascript" src="Javascript.js"></script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="destinations-styles.css">
+    <!--
+	<style>
+        body.dark-mode {
+            background-color: #3f3d3d;
+            color: #ffffff;
+        }
+
+        .navbar {
+            background-color: #f8c9a5; /* Light orange background for navbar */
+        }
+
+        .navbar .nav-link {
+            color: black;
+        }
+
+        .custom-button {
+            background-color: #c7a1b4; /* Background color for buttons */
+            color: white; /* Text color for buttons */
+            border: none;
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+
+        .custom-button:hover {
+            background-color: #f6bc9e; /* Darker shade for hover effect */
+        }
+
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+
+        .popup-content img {
+            width: 100%;
+            height: auto;
+        }
+
+        .map-container {
+            width: 80%; /* Adjust the width as needed */
+            max-width: 1200px; /* Optional: Set a maximum width */
+            height: 600px; /* Adjust the height as needed */
+            margin: 0 auto; /* Center the map container */
+        }
+		
+		.table-container {
+            width: 80%; /* Adjust the width as needed */
+            max-width: 800px; /* Optional: Set a maximum width */
+            margin: 0 auto; /* Center the table container */
+            margin-top: 20px;
+			margin-bottom: 20px;
+			
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #f5e1e1; /* Light brown color */
+            border-radius: 8px;
+            overflow: hidden;
+			/* padding-bottom: 20px; */
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #e3bfa2; /* Slightly darker brown */
+            color: #fff;
+        }
+
+        tr:hover {
+            background-color: #f1d8d8; /* Light brown hover effect */
+        }
+
+        .details {
+            display: none;
+            background-color: #fff; /* White background for details */
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .details img {
+            width: 100px;
+            height: auto;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .details p {
+            margin: 0;
+        }
+
+        .expand-btn {
+            cursor: pointer;
+            color: black;
+            text-decoration: none;
+        }
+		
+    </style>
+	-->
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">TWM</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href='#'>Destinations</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="blog.html">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="gallery.html">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <button id="theme-toggle" class="custom-button">
+                        <img id="theme-icon" src="https://img.icons8.com/ios-filled/50/000000/moon-symbol.png" alt="Toggle Theme" width="20" height="20">
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1>Where do you want to go?</h1>
+
+    <div class="map-container">
+        <div id="map"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map
+        var map = L.map('map').setView([0, 0], 2); // Centered at [0,0] and zoomed out to show the whole world
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(map);
+
+        // Define the destinations with coordinates and image URLs
+        var destinations = [
+            {
+                lat: -30.5595, // South Africa
+                lng: 22.9375,
+                image: 'table-mountain.jpg',
+                caption: 'South Africa'
+            },
+            {
+                lat: 43.65107, // Toronto
+                lng: -79.347015,
+                image: 'toronto.jpg',
+                caption: 'Toronto'
+            },
+            {
+                lat: 36.7783, // California
+                lng: -119.4179,
+                image: 'california.jpg',
+                caption: 'California'
+            },
+            {
+                lat: 19.4326, // Mexico
+                lng: -99.1332,
+                image: 'cozumel.jpg',
+                caption: 'Mexico'
+            },
+            {
+                lat: 51.5074, // Britain
+                lng: -0.1278,
+                image: 'britain.jpg',
+                caption: 'Britain'
+            },
+            {
+                lat: 23.6978, // Taiwan
+                lng: 120.9605,
+                image: 'taiwan.jpg',
+                caption: 'Taiwan'
+            },
+            {
+                lat: 18.1096, // The Caribbean
+                lng: -77.2975,
+                image: 'caribbean.jpg',
+                caption: 'The Caribbean'
+            }
+        ];
+
+        // Add markers to the map
+        destinations.forEach(function(destination) {
+            var marker = L.marker([destination.lat, destination.lng]).addTo(map);
+            var popupContent = `<div class="popup-content"><img src="${destination.image}" alt="${destination.caption}"><p>${destination.caption}</p></div>`;
+            marker.bindPopup(popupContent);
+        });
+    </script>
+	
+	<div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Destinations</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example of expandable row -->
+                <tr>
+                    <td>
+                        <div>
+                            <span class="expand-btn" onclick="toggleDetails(1)">South Africa</span>
+                            <div class="details" id="details-1">
+                                <img src="table-mountain.jpg" alt="South Africa Image 1">
+                                <img src="penguins.jpg" alt="South Africa Image 2">
+                                <p>South Africa is known for its diverse landscapes, including savannas, deserts, and coastal regions. It's famous for its wildlife, including the Big Five, and vibrant cities like Cape Town and Johannesburg.</p>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div>
+                            <span class="expand-btn" onclick="toggleDetails(2)">Toronto</span>
+                            <div class="details" id="details-2">
+                                <img src="https://example.com/toronto1.jpg" alt="Toronto Image 1">
+                                <img src="https://example.com/toronto2.jpg" alt="Toronto Image 2">
+                                <p>Toronto, Canada's largest city, is known for its multicultural atmosphere, iconic landmarks like the CN Tower, and vibrant neighborhoods. It's a hub for arts, culture, and entertainment.</p>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div>
+                            <span class="expand-btn" onclick="toggleDetails(3)">California</span>
+                            <div class="details" id="details-3">
+                                <img src="https://example.com/california1.jpg" alt="California Image 1">
+                                <img src="https://example.com/california2.jpg" alt="California Image 2">
+                                <p>California is known for its diverse geography, including beaches, mountains, and deserts. Major attractions include Hollywood, the Golden Gate Bridge, and stunning national parks like Yosemite and Joshua Tree.</p>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        <div>
+                            <span class="expand-btn" onclick="toggleDetails(3)">Mexico</span>
+                            <div class="details" id="details-3">
+                                <img src="https://example.com/california1.jpg" alt="California Image 1">
+                                <img src="https://example.com/california2.jpg" alt="California Image 2">
+                                <p>California is known for its diverse geography, including beaches, mountains, and deserts. Major attractions include Hollywood, the Golden Gate Bridge, and stunning national parks like Yosemite and Joshua Tree.</p>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        <div>
+                            <span class="expand-btn" onclick="toggleDetails(3)">Britain</span>
+                            <div class="details" id="details-3">
+                                <img src="https://example.com/california1.jpg" alt="California Image 1">
+                                <img src="https://example.com/california2.jpg" alt="California Image 2">
+                                <p>California is known for its diverse geography, including beaches, mountains, and deserts. Major attractions include Hollywood, the Golden Gate Bridge, and stunning national parks like Yosemite and Joshua Tree.</p>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        <div>
+                            <span class="expand-btn" onclick="toggleDetails(3)">Taiwan</span>
+                            <div class="details" id="details-3">
+                                <img src="https://example.com/california1.jpg" alt="California Image 1">
+                                <img src="https://example.com/california2.jpg" alt="California Image 2">
+                                <p>California is known for its diverse geography, including beaches, mountains, and deserts. Major attractions include Hollywood, the Golden Gate Bridge, and stunning national parks like Yosemite and Joshua Tree.</p>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- Repeat similar blocks for other destinations -->
+            </tbody>
+        </table>
+    </div>
+<script type="text/javascript" src="Javascript.js"></script>
+</body>
+</html>
